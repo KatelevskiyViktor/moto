@@ -1,13 +1,11 @@
 $(document).ready(function(){
-    function isNumeric(n) {
-        return !isNaN(parseFloat(n)) && isFinite(n);
-    }
-function hideON(idEl, time){
-    if(isNumeric(time) && time > 500 && time < 10000)idEl.fadeOut(time);
-    else alert("Вы ввели не число, либо оно вне диапазона!");
 
-}
-    hideON($('img[src*=logo]'), 300);
+$('#small a').click(function(e){
+	$('#big img').hide().attr('src', $(this).attr('href')).load(function(){
+		$(this).fadeIn(2000);
+	});
+	e.preventDefault();
+});
 
 });//Конец ready
 
